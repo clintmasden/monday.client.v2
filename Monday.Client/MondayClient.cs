@@ -178,7 +178,7 @@ namespace Monday.Client
         }
 
         /// <summary>
-        ///     Get all (up to 100,000) items [excluding columns & subscribers] with simplified boards, groups, and users.
+        ///     Get all (up to 100,000) items [excluding columns and subscribers] with simplified boards, groups, and users.
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>

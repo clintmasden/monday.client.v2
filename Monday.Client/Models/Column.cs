@@ -20,6 +20,9 @@ namespace Monday.Client.Models
         [JsonProperty("title")]
         public string Name { get; set; }
 
+        /// <summary>
+        /// The column's type.
+        /// </summary>
         [JsonProperty("type")] public string Type { get; set; }
 
         ///// <summary>
