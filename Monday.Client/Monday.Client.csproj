@@ -12,6 +12,7 @@
     <PackageReleaseNotes>Public .Nuget Release</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/clintmasden/monday.client.v2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/clintmasden/monday.client.v2</RepositoryUrl>
+    <PackageId>Monday.Client.v2</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
