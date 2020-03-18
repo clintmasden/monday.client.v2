@@ -9,11 +9,11 @@
     <Product>Monday Client [API Version 2]</Product>
     <Description>Monday Client Interface [API Version 2]</Description>
     <PackageTags>Monday Client API Monday.com</PackageTags>
-    <PackageReleaseNotes>Included XML documentation.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added custom query or mutation function.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/clintmasden/monday.client.v2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/clintmasden/monday.client.v2</RepositoryUrl>
     <PackageId>Monday.Client.v2</PackageId>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
