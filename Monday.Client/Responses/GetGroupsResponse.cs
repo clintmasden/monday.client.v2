@@ -3,7 +3,7 @@ using Monday.Client.Models;
 
 namespace Monday.Client.Responses
 {
-    internal class GetGroupsResponse
+    public class GetGroupsResponse
     {
         public List<Board> Boards { get; set; }
 

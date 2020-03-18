@@ -688,5 +688,25 @@ namespace Monday.Client
 
             return result.Data.Tag.Id;
         }
+
+        /// <summary>
+        ///     Leverage a custom query or mutation using the available responses/models
+        /// </summary>
+        /// <typeparam name="T">Generic object return</typeparam>
+        /// <param name="queryOrMutation">A custom query or mutation</param>
+        /// <returns></returns>
+        public async Task<T> CustomQueryOrMutation<T>(string queryOrMutation)
+        {
+            var request = new GraphQLRequest
+            {
+                Query = queryOrMutation
+            };
+
+            var result = await _graphQlHttpClient.SendMutationAsync<T>(request);
+
+            ThrowResponseErrors(result.Errors);
+
+            return result.Data;
+        }
     }
 }

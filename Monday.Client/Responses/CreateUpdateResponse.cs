@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Monday.Client.Responses
 {
-    internal class CreateUpdateResponse
+    public class CreateUpdateResponse
     {
         [JsonProperty("create_update")] public Update Update { get; set; }
     }

@@ -1,1027 +1,1028 @@
 <?xml version="1.0"?>
+
 <doc>
-    <assembly>
-        <name>Monday.Client</name>
-    </assembly>
-    <members>
-        <member name="T:Monday.Client.Models.Board">
-            <summary>
-                Monday.com boards are where our users input all of their data and as such it is one of the core components of the
-                platform and one of the main objects with which you will need to be familiar.
-                The board’s structure is composed of rows(called items), groups of rows(called groups), and columns.The data of the
-                board is stored in the items of the board and in the updates sections of each item. Each board has one or more
-                owners and subscribers.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.Id">
-            <summary>
-                The unique identifier of the board.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.Name">
-            <summary>
-                The board's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.Description">
-            <summary>
-                The board's description.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.BoardAccessType">
-            <summary>
-                The board's kind. (public / private / share)
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.BoardStateType">
-            <summary>
-                The state of the board (all / active / archived / deleted), the default is active.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.BoardFolderId">
-            <summary>
-                The board's folder unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.Columns">
-            <summary>
-                The board's visible columns.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Board.Permissions">
-            <summary>
-                The board's permissions.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.BoardAccessTypes">
-            <summary>
-                The board's kind. (public / private / share)
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardAccessTypes.Default">
-            <summary>
-                [Default State]
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardAccessTypes.Public">
-            <summary>
-                Board is public.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardAccessTypes.Private">
-            <summary>
-                Board is private.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardAccessTypes.Share">
-            <summary>
-                Board is shared.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.BoardStateTypes">
-            <summary>
-                The state of the board. (all / active / archived / deleted)
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardStateTypes.Default">
-            <summary>
-                [Default State]
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardStateTypes.All">
-            <summary>
-                Board is all types.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardStateTypes.Active">
-            <summary>
-                Board is active.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardStateTypes.Archived">
-            <summary>
-                Board is archived.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.BoardStateTypes.Deleted">
-            <summary>
-                Board is deleted.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Column">
-            <summary>
-                Columns and items are two core elements of a board. A board is formatted as a table where there are columns and
-                rows called items. In monday.com each column has a specific functionality it enables (ex. a numbers column, a text
-                column, a time tracking column, etc.)
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Column.Id">
-            <summary>
-                The column's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Column.Name">
-            <summary>
-                The column's title.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Column.Type">
-            <summary>
-            The column's type.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Column.IsArchived">
-            <summary>
-                Is the column archived.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Column.Settings">
-            <summary>
-                The column's settings in a string form.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.AutoNumber">
-            <summary>
-                Number items according to their order in the group/board
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Checkbox">
-            <summary>
-                Check off items and see what's done at a glance
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Country">
-            <summary>
-                Choose a country
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.ColorPicker">
-            <summary>
-                Manage a design system using a color palette
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.CreationLog">
-            <summary>
-                Add the item creator and creation date automatically
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Date">
-            <summary>
-                Add dates like deadlines to ensure you never drop the ball
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Dropdown">
-            <summary>
-                Create a dropdown list of options
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Email">
-            <summary>
-                Email team members and clients directly from your board
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Hour">
-            <summary>
-                Add times to manage and schedule tasks, shifts and more
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.ItemId">
-            <summary>
-                Show a unique ID for each item
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.LastUpdated">
-            <summary>
-                Add the person that last updated the item and the date
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Link">
-            <summary>
-                Simply hyperlink to any website
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Location">
-            <summary>
-                Place multiple locations on a geographic map
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.LongText">
-            <summary>
-                Add large amounts of text without changing column width
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Numbers">
-            <summary>
-                Add revenue, costs, time estimations and more
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.People">
-            <summary>
-                Assign people to improve team work
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Phone">
-            <summary>
-                Call your contacts directly from monday.com
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Progress">
-            <summary>
-                Show progress by combining status columns in a battery
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Rating">
-            <summary>
-                Rate or rank anything visually
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Status">
-            <summary>
-                Get an instant overview of where things stand
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Team">
-            <summary>
-                Assign a full team to an item
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Tags">
-            <summary>
-                Add tags to categorize items across multiple boards
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Text">
-            <summary>
-                Add textual information e.g. addresses, names or keywords
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Timeline">
-            <summary>
-                Visually see a breakdown of your team's workload by time
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.TimeTracking">
-            <summary>
-                Basic time tracking for every item
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Vote">
-            <summary>
-                Vote on an item e.g. pick a new feature or a favorite lunch place
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Week">
-            <summary>
-                Select the week on which each item should be completed
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.WorldClock">
-            <summary>
-                Keep track of the time anywhere in the world
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.ColumnTypes.Integration">
-            <summary>
-                NA
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.ColumnValue">
-            <summary>
-                The value of an items column
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Id">
-            <summary>
-                The column's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Name">
-            <summary>
-                The column's title.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Value">
-            <summary>
-                The column's value in json format.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.ValueText">
-            <summary>
-                The column's textual value in string form.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Information">
-            <summary>
-                The column value's additional information. [JSON]
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Complexity">
-            <summary>
-                Get the complexity data of your queries.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Complexity.Before">
-            <summary>
-                The remainder of complexity after the query's execution.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Complexity.After">
-            <summary>
-                The remainder of complexity after the query's execution.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Complexity.Query">
-            <summary>
-                The specific query's complexity.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Group">
-            <summary>
-                Items are grouped together in units called groups. Each board contains one or multiple groups, and each group can
-                hold one or many items.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Group.Id">
-            <summary>
-                The group's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Group.Name">
-            <summary>
-                The group's title.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Group.Color">
-            <summary>
-                The group's color.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Group.IsArchived">
-            <summary>
-                Is the group archived.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Group.IsDeleted">
-            <summary>
-                Is the group deleted.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Item">
-            <summary>
-                Monday.com items are another core object in the platform. Items are the objects that hold the actual data within
-                the board, to better illustrate this, you can think of a board as a table and a item as a single row in that table.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.Id">
-            <summary>
-                The item's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.Board">
-            <summary>
-                The board that contains this item.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.Group">
-            <summary>
-                The group that contains this item.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.ColumnValues">
-            <summary>
-                The item's column values.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.UserId">
-            <summary>
-                The unique identifier of the item creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.User">
-            <summary>
-                The item's creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.Name">
-            <summary>
-                The item's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.Subscribers">
-            <summary>
-                The item's subscribers.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.CreatedAtString">
-            <summary>
-                Monday - Why is everything else a real DateTime except on pulses/items /sigh
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.CreatedAt">
-            <summary>
-                The item's create date [LocalDateTime].
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.UpdatedAtString">
-            <summary>
-                Monday - Why is everything else a real DateTime except on pulses/items /sigh
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Item.UpdatedAt">
-            <summary>
-                The item's last update date [LocalDateTime].
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Reply">
-            <summary>
-                A reply for an update.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.Id">
-            <summary>
-                The reply's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.UserId">
-            <summary>
-                The unique identifier of the reply creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.User">
-            <summary>
-                The reply's creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.Body">
-            <summary>
-                The reply's html formatted body.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.BodyText">
-            <summary>
-                The reply's text body.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.CreatedAt">
-            <summary>
-                The reply's creation date.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Reply.UpdatedAt">
-            <summary>
-                The reply's last edit date.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Tag">
-            <summary>
-                Monday.com tags are objects that help you group items from different groups or different boards throughout your
-                account by a consistent keyword. Tag entities are created and presented through the “Tags” column.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Tag.Id">
-            <summary>
-                The tag's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Tag.Name">
-            <summary>
-                The tag's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Tag.Color">
-            <summary>
-                The tag's color.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.Team">
-            <summary>
-                Teams are the most efficient way to manage groups of users in monday.com. Teams are comprised of one or multiple
-                users, and every user can be a part of multiple teams (or none).
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Team.Id">
-            <summary>
-                The team's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Team.Name">
-            <summary>
-                The team's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Team.Photo">
-            <summary>
-                The team's picture url.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Team.Users">
-            <summary>
-                The users in the team.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.Id">
-            <summary>
-                The update's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.ItemId">
-            <summary>
-                The update's item unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.UserId">
-            <summary>
-                The unique identifier of the update creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.User">
-            <summary>
-                The update's creator.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.Body">
-            <summary>
-                The update's html formatted body.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.BodyText">
-            <summary>
-                The update's text body.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.Replies">
-            <summary>
-                The update's replies.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.CreatedAt">
-            <summary>
-                The update's creation date.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.Update.UpdatedAt">
-            <summary>
-                The update's last edit date.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.User">
-            <summary>
-                Every user in monday.com is a part of an account (i.e an organization) and could be a member or a guest in that
-                account.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Id">
-            <summary>
-                The user's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Name">
-            <summary>
-                The user's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Email">
-            <summary>
-                The user's email.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Url">
-            <summary>
-                The user's profile url.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Photo">
-            <summary>
-                The user's photo in the original size.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Title">
-            <summary>
-                The user's title.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Birthday">
-            <summary>
-                The user's birthday.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.CountryCode">
-            <summary>
-                The user's country code.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Location">
-            <summary>
-                The user's location.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.TimeZoneIdentifier">
-            <summary>
-                The user's timezone identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.Phone">
-            <summary>
-                The user's phone number.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.MobilePhone">
-            <summary>
-                The user's mobile phone number.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.IsGuest">
-            <summary>
-                Is the user a guest.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.IsPending">
-            <summary>
-                Is the user a pending user.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.IsEnabled">
-            <summary>
-                Is the user enabled.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.User.CreatedAt">
-            <summary>
-                The user's creation date.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Models.UserAccessTypes">
-            <summary>
-                The kind to search users by (all / non_guests / guests / non_pending).
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.UserAccessTypes.All">
-            <summary>
-                All Users.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.UserAccessTypes.NonGuests">
-            <summary>
-                Non-guest Users.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.UserAccessTypes.Guests">
-            <summary>
-                Guest Users.
-            </summary>
-        </member>
-        <member name="F:Monday.Client.Models.UserAccessTypes.NonPending">
-            <summary>
-                Non-Pending Users.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.MondayClient">
-            <summary>
-                Creates client for accessing Monday's endpoints.
-            </summary>
-        </member>
-        <member name="M:Monday.Client.MondayClient.#ctor(System.String)">
-            <summary>
-                Creates client for accessing Monday's endpoints.
-            </summary>
-            <param name="apiKey">The version 2 key.</param>
-        </member>
-        <member name="M:Monday.Client.MondayClient.ThrowResponseErrors(GraphQL.GraphQLError[])">
-            <summary>
-                Helper method for throwing all errors reported from the response.
-            </summary>
-            <param name="graphQlErrors"></param>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetUsers">
-            <summary>
-                Get all users.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetUsers(Monday.Client.Models.UserAccessTypes)">
-            <summary>
-                Get all users filtered by user access type [user kind].
-            </summary>
-            <param name="userAccessType">The user access type.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetUser(System.Int32)">
-            <summary>
-                Return a specific user.
-            </summary>
-            <param name="userId">The user’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetBoards">
-            <summary>
-                Get all (up to 100,000) boards [excluding columns] with a simplified user.
-            </summary>
-            <remarks>
-                Groups, items, subscribers, tags and updates can be loaded with their functions to further reduce complexity
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetBoard(System.Int32)">
-            <summary>
-                Return a specific board with it's columns.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetGroups(System.Int32)">
-            <summary>
-                Gets all groups on a board.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetItems(System.Int32)">
-            <summary>
-                Get all (up to 100,000) items [excluding columns and subscribers] with simplified boards, groups, and users.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetItem(System.Int32)">
-            <summary>
-                Return a specific item with it's board, group, columns, subscribers, updates, replies and user.
-            </summary>
-            <param name="itemId">The item’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetTags(System.Int32)">
-            <summary>
-                Gets all tags on a board.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetTag(System.Int32)">
-            <summary>
-                Returns a specific tag.
-            </summary>
-            <param name="tagId">The tag’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetTeams">
-            <summary>
-                Gets all teams with simplified users.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetTeam(System.Int32)">
-            <summary>
-                Returns a specific team with simplified users.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetRateLimit">
-            <summary>
-                Returns the api rate limit (how much of your 1 minute cap is left)
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.GetComplexity(System.String)">
-            <summary>
-                Get the complexity data of your queries.
-            </summary>
-            <param name="query">The request query.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateBoard(Monday.Client.Mutations.CreateBoard)">
-            <summary>
-                Creates a board.
-            </summary>
-            <param name="createBoard">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveBoard(System.Int32)">
-            <summary>
-                Archives a board.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateColumn(Monday.Client.Mutations.CreateColumn)">
-            <summary>
-                Create a new column in board.
-            </summary>
-            <param name="createColumn">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.UpdateColumn(Monday.Client.Mutations.UpdateColumn)">
-            <summary>
-                Update the value of a column for a specific item.
-            </summary>
-            <param name="updateColumn">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateGroup(Monday.Client.Mutations.CreateGroup)">
-            <summary>
-                Creates a new group in a specific board.
-            </summary>
-            <param name="createGroup">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveGroup(System.Int32,System.String)">
-            <summary>
-                Archives a group in a specific board.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.DeleteGroup(System.Int32,System.String)">
-            <summary>
-                Deletes a group in a specific board.
-            </summary>
-            <param name="boardId">The board’s unique identifier.</param>
-            <param name="groupId">THe group's unique identifier</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateItem(Monday.Client.Mutations.CreateItem)">
-            <summary>
-                Create a new item.
-            </summary>
-            <param name="createItem">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.ClearItemUpdates(System.Int32)">
-            <summary>
-                Clear an item's updates.
-            </summary>
-            <param name="itemId">The item’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.UpdateItemGroup(System.Int32,System.String)">
-            <summary>
-                Move an item to a different group.
-            </summary>
-            <param name="itemId">The item’s unique identifier.</param>
-            <param name="groupId">The group’s unique identifier</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveItem(System.Int32)">
-            <summary>
-                Archive an item.
-            </summary>
-            <param name="itemId">The item’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.DeleteItem(System.Int32)">
-            <summary>
-                Delete an item.
-            </summary>
-            <param name="itemId">The item’s unique identifier.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateUpdate(Monday.Client.Mutations.CreateUpdate)">
-            <summary>
-                Create a new update.
-            </summary>
-            <param name="createUpdate">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Monday.Client.MondayClient.CreateTag(Monday.Client.Mutations.CreateTag)">
-            <summary>
-                Create a new tag or get it if it already exists.
-            </summary>
-            <param name="createTag">The mutation model.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateBoard">
-            <summary>
-                Create a new board mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateBoard.Name">
-            <summary>
-                The board's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateBoard.BoardAccessType">
-            <summary>
-                The board's kind. (public / private / share)
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateColumn">
-            <summary>
-                Create a new column in board mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateColumn.BoardId">
-            <summary>
-                The board's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateColumn.Name">
-            <summary>
-                The new column's title.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateColumn.ColumnType">
-            <summary>
-                The type of column to create.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateColumn.Defaults">
-            <summary>
-                The new column's defaults. [JSON]
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateGroup">
-            <summary>
-                Creates a new group in a specific board mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateGroup.BoardId">
-            <summary>
-                The board's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateGroup.Name">
-            <summary>
-                The name of the new group.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateItem">
-            <summary>
-                Create a new item mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateItem.Name">
-            <summary>
-                The new item's name.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateItem.BoardId">
-            <summary>
-                The board's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateItem.GroupId">
-            <summary>
-                The group's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateItem.ColumnValues">
-            <summary>
-                The column values of the new item [JSON].
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateTag">
-            <summary>
-                Create a new tag or get it if it already exists mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateTag.Name">
-            <summary>
-                The new tag's name
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateTag.BoardId">
-            <summary>
-                The private board id to create the tag at (not needed for public boards)
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.CreateUpdate">
-            <summary>
-                Create a new update mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateUpdate.ItemId">
-            <summary>
-                The item's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.CreateUpdate.Body">
-            <summary>
-                The update text.
-            </summary>
-        </member>
-        <member name="T:Monday.Client.Mutations.UpdateColumn">
-            <summary>
-                Change an item's column value mutation.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.UpdateColumn.BoardId">
-            <summary>
-                The board's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.UpdateColumn.ItemId">
-            <summary>
-                The item's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.UpdateColumn.ColumnId">
-            <summary>
-                The column's unique identifier.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Mutations.UpdateColumn.Value">
-            <summary>
-                The new value of the column. [JSON] [https://monday.com/developers/v2#column-values-section]
-            </summary>
-        </member>
-    </members>
+  <assembly>
+    <name>Monday.Client</name>
+  </assembly>
+  <members>
+    <member name="T:Monday.Client.Models.Board">
+      <summary>
+        Monday.com boards are where our users input all of their data and as such it is one of the core components of the
+        platform and one of the main objects with which you will need to be familiar.
+        The board’s structure is composed of rows(called items), groups of rows(called groups), and columns.The data of the
+        board is stored in the items of the board and in the updates sections of each item. Each board has one or more
+        owners and subscribers.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.Id">
+      <summary>
+        The unique identifier of the board.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.Name">
+      <summary>
+        The board's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.Description">
+      <summary>
+        The board's description.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.BoardAccessType">
+      <summary>
+        The board's kind. (public / private / share)
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.BoardStateType">
+      <summary>
+        The state of the board (all / active / archived / deleted), the default is active.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.BoardFolderId">
+      <summary>
+        The board's folder unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.Columns">
+      <summary>
+        The board's visible columns.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Board.Permissions">
+      <summary>
+        The board's permissions.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.BoardAccessTypes">
+      <summary>
+        The board's kind. (public / private / share)
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardAccessTypes.Default">
+      <summary>
+        [Default State]
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardAccessTypes.Public">
+      <summary>
+        Board is public.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardAccessTypes.Private">
+      <summary>
+        Board is private.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardAccessTypes.Share">
+      <summary>
+        Board is shared.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.BoardStateTypes">
+      <summary>
+        The state of the board. (all / active / archived / deleted)
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardStateTypes.Default">
+      <summary>
+        [Default State]
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardStateTypes.All">
+      <summary>
+        Board is all types.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardStateTypes.Active">
+      <summary>
+        Board is active.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardStateTypes.Archived">
+      <summary>
+        Board is archived.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.BoardStateTypes.Deleted">
+      <summary>
+        Board is deleted.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Column">
+      <summary>
+        Columns and items are two core elements of a board. A board is formatted as a table where there are columns and
+        rows called items. In monday.com each column has a specific functionality it enables (ex. a numbers column, a text
+        column, a time tracking column, etc.)
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Column.Id">
+      <summary>
+        The column's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Column.Name">
+      <summary>
+        The column's title.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Column.Type">
+      <summary>
+        The column's type.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Column.IsArchived">
+      <summary>
+        Is the column archived.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Column.Settings">
+      <summary>
+        The column's settings in a string form.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.AutoNumber">
+      <summary>
+        Number items according to their order in the group/board
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Checkbox">
+      <summary>
+        Check off items and see what's done at a glance
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Country">
+      <summary>
+        Choose a country
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.ColorPicker">
+      <summary>
+        Manage a design system using a color palette
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.CreationLog">
+      <summary>
+        Add the item creator and creation date automatically
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Date">
+      <summary>
+        Add dates like deadlines to ensure you never drop the ball
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Dropdown">
+      <summary>
+        Create a dropdown list of options
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Email">
+      <summary>
+        Email team members and clients directly from your board
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Hour">
+      <summary>
+        Add times to manage and schedule tasks, shifts and more
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.ItemId">
+      <summary>
+        Show a unique ID for each item
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.LastUpdated">
+      <summary>
+        Add the person that last updated the item and the date
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Link">
+      <summary>
+        Simply hyperlink to any website
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Location">
+      <summary>
+        Place multiple locations on a geographic map
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.LongText">
+      <summary>
+        Add large amounts of text without changing column width
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Numbers">
+      <summary>
+        Add revenue, costs, time estimations and more
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.People">
+      <summary>
+        Assign people to improve team work
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Phone">
+      <summary>
+        Call your contacts directly from monday.com
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Progress">
+      <summary>
+        Show progress by combining status columns in a battery
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Rating">
+      <summary>
+        Rate or rank anything visually
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Status">
+      <summary>
+        Get an instant overview of where things stand
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Team">
+      <summary>
+        Assign a full team to an item
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Tags">
+      <summary>
+        Add tags to categorize items across multiple boards
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Text">
+      <summary>
+        Add textual information e.g. addresses, names or keywords
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Timeline">
+      <summary>
+        Visually see a breakdown of your team's workload by time
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.TimeTracking">
+      <summary>
+        Basic time tracking for every item
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Vote">
+      <summary>
+        Vote on an item e.g. pick a new feature or a favorite lunch place
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Week">
+      <summary>
+        Select the week on which each item should be completed
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.WorldClock">
+      <summary>
+        Keep track of the time anywhere in the world
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.ColumnTypes.Integration">
+      <summary>
+        NA
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.ColumnValue">
+      <summary>
+        The value of an items column
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.ColumnValue.Id">
+      <summary>
+        The column's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.ColumnValue.Name">
+      <summary>
+        The column's title.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.ColumnValue.Value">
+      <summary>
+        The column's value in json format.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.ColumnValue.ValueText">
+      <summary>
+        The column's textual value in string form.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.ColumnValue.Information">
+      <summary>
+        The column value's additional information. [JSON]
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Complexity">
+      <summary>
+        Get the complexity data of your queries.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Complexity.Before">
+      <summary>
+        The remainder of complexity after the query's execution.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Complexity.After">
+      <summary>
+        The remainder of complexity after the query's execution.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Complexity.Query">
+      <summary>
+        The specific query's complexity.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Group">
+      <summary>
+        Items are grouped together in units called groups. Each board contains one or multiple groups, and each group can
+        hold one or many items.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Group.Id">
+      <summary>
+        The group's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Group.Name">
+      <summary>
+        The group's title.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Group.Color">
+      <summary>
+        The group's color.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Group.IsArchived">
+      <summary>
+        Is the group archived.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Group.IsDeleted">
+      <summary>
+        Is the group deleted.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Item">
+      <summary>
+        Monday.com items are another core object in the platform. Items are the objects that hold the actual data within
+        the board, to better illustrate this, you can think of a board as a table and a item as a single row in that table.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.Id">
+      <summary>
+        The item's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.Board">
+      <summary>
+        The board that contains this item.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.Group">
+      <summary>
+        The group that contains this item.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.ColumnValues">
+      <summary>
+        The item's column values.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.UserId">
+      <summary>
+        The unique identifier of the item creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.User">
+      <summary>
+        The item's creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.Name">
+      <summary>
+        The item's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.Subscribers">
+      <summary>
+        The item's subscribers.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.CreatedAtString">
+      <summary>
+        Monday - Why is everything else a real DateTime except on pulses/items /sigh
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.CreatedAt">
+      <summary>
+        The item's create date [LocalDateTime].
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.UpdatedAtString">
+      <summary>
+        Monday - Why is everything else a real DateTime except on pulses/items /sigh
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Item.UpdatedAt">
+      <summary>
+        The item's last update date [LocalDateTime].
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Reply">
+      <summary>
+        A reply for an update.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.Id">
+      <summary>
+        The reply's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.UserId">
+      <summary>
+        The unique identifier of the reply creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.User">
+      <summary>
+        The reply's creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.Body">
+      <summary>
+        The reply's html formatted body.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.BodyText">
+      <summary>
+        The reply's text body.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.CreatedAt">
+      <summary>
+        The reply's creation date.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Reply.UpdatedAt">
+      <summary>
+        The reply's last edit date.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Tag">
+      <summary>
+        Monday.com tags are objects that help you group items from different groups or different boards throughout your
+        account by a consistent keyword. Tag entities are created and presented through the “Tags” column.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Tag.Id">
+      <summary>
+        The tag's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Tag.Name">
+      <summary>
+        The tag's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Tag.Color">
+      <summary>
+        The tag's color.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.Team">
+      <summary>
+        Teams are the most efficient way to manage groups of users in monday.com. Teams are comprised of one or multiple
+        users, and every user can be a part of multiple teams (or none).
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Team.Id">
+      <summary>
+        The team's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Team.Name">
+      <summary>
+        The team's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Team.Photo">
+      <summary>
+        The team's picture url.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Team.Users">
+      <summary>
+        The users in the team.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.Id">
+      <summary>
+        The update's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.ItemId">
+      <summary>
+        The update's item unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.UserId">
+      <summary>
+        The unique identifier of the update creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.User">
+      <summary>
+        The update's creator.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.Body">
+      <summary>
+        The update's html formatted body.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.BodyText">
+      <summary>
+        The update's text body.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.Replies">
+      <summary>
+        The update's replies.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.CreatedAt">
+      <summary>
+        The update's creation date.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.Update.UpdatedAt">
+      <summary>
+        The update's last edit date.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.User">
+      <summary>
+        Every user in monday.com is a part of an account (i.e an organization) and could be a member or a guest in that
+        account.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Id">
+      <summary>
+        The user's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Name">
+      <summary>
+        The user's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Email">
+      <summary>
+        The user's email.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Url">
+      <summary>
+        The user's profile url.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Photo">
+      <summary>
+        The user's photo in the original size.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Title">
+      <summary>
+        The user's title.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Birthday">
+      <summary>
+        The user's birthday.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.CountryCode">
+      <summary>
+        The user's country code.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Location">
+      <summary>
+        The user's location.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.TimeZoneIdentifier">
+      <summary>
+        The user's timezone identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.Phone">
+      <summary>
+        The user's phone number.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.MobilePhone">
+      <summary>
+        The user's mobile phone number.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.IsGuest">
+      <summary>
+        Is the user a guest.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.IsPending">
+      <summary>
+        Is the user a pending user.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.IsEnabled">
+      <summary>
+        Is the user enabled.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Models.User.CreatedAt">
+      <summary>
+        The user's creation date.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Models.UserAccessTypes">
+      <summary>
+        The kind to search users by (all / non_guests / guests / non_pending).
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.UserAccessTypes.All">
+      <summary>
+        All Users.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.UserAccessTypes.NonGuests">
+      <summary>
+        Non-guest Users.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.UserAccessTypes.Guests">
+      <summary>
+        Guest Users.
+      </summary>
+    </member>
+    <member name="F:Monday.Client.Models.UserAccessTypes.NonPending">
+      <summary>
+        Non-Pending Users.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.MondayClient">
+      <summary>
+        Creates client for accessing Monday's endpoints.
+      </summary>
+    </member>
+    <member name="M:Monday.Client.MondayClient.#ctor(System.String)">
+      <summary>
+        Creates client for accessing Monday's endpoints.
+      </summary>
+      <param name="apiKey">The version 2 key.</param>
+    </member>
+    <member name="M:Monday.Client.MondayClient.ThrowResponseErrors(GraphQL.GraphQLError[])">
+      <summary>
+        Helper method for throwing all errors reported from the response.
+      </summary>
+      <param name="graphQlErrors"></param>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetUsers">
+      <summary>
+        Get all users.
+      </summary>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetUsers(Monday.Client.Models.UserAccessTypes)">
+      <summary>
+        Get all users filtered by user access type [user kind].
+      </summary>
+      <param name="userAccessType">The user access type.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetUser(System.Int32)">
+      <summary>
+        Return a specific user.
+      </summary>
+      <param name="userId">The user’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetBoards">
+      <summary>
+        Get all (up to 100,000) boards [excluding columns] with a simplified user.
+      </summary>
+      <remarks>
+        Groups, items, subscribers, tags and updates can be loaded with their functions to further reduce complexity
+      </remarks>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetBoard(System.Int32)">
+      <summary>
+        Return a specific board with it's columns.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetGroups(System.Int32)">
+      <summary>
+        Gets all groups on a board.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetItems(System.Int32)">
+      <summary>
+        Get all (up to 100,000) items [excluding columns and subscribers] with simplified boards, groups, and users.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetItem(System.Int32)">
+      <summary>
+        Return a specific item with it's board, group, columns, subscribers, updates, replies and user.
+      </summary>
+      <param name="itemId">The item’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetTags(System.Int32)">
+      <summary>
+        Gets all tags on a board.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetTag(System.Int32)">
+      <summary>
+        Returns a specific tag.
+      </summary>
+      <param name="tagId">The tag’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetTeams">
+      <summary>
+        Gets all teams with simplified users.
+      </summary>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetTeam(System.Int32)">
+      <summary>
+        Returns a specific team with simplified users.
+      </summary>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetRateLimit">
+      <summary>
+        Returns the api rate limit (how much of your 1 minute cap is left)
+      </summary>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.GetComplexity(System.String)">
+      <summary>
+        Get the complexity data of your queries.
+      </summary>
+      <param name="query">The request query.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateBoard(Monday.Client.Mutations.CreateBoard)">
+      <summary>
+        Creates a board.
+      </summary>
+      <param name="createBoard">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.ArchiveBoard(System.Int32)">
+      <summary>
+        Archives a board.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateColumn(Monday.Client.Mutations.CreateColumn)">
+      <summary>
+        Create a new column in board.
+      </summary>
+      <param name="createColumn">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.UpdateColumn(Monday.Client.Mutations.UpdateColumn)">
+      <summary>
+        Update the value of a column for a specific item.
+      </summary>
+      <param name="updateColumn">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateGroup(Monday.Client.Mutations.CreateGroup)">
+      <summary>
+        Creates a new group in a specific board.
+      </summary>
+      <param name="createGroup">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.ArchiveGroup(System.Int32,System.String)">
+      <summary>
+        Archives a group in a specific board.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.DeleteGroup(System.Int32,System.String)">
+      <summary>
+        Deletes a group in a specific board.
+      </summary>
+      <param name="boardId">The board’s unique identifier.</param>
+      <param name="groupId">THe group's unique identifier</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateItem(Monday.Client.Mutations.CreateItem)">
+      <summary>
+        Create a new item.
+      </summary>
+      <param name="createItem">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.ClearItemUpdates(System.Int32)">
+      <summary>
+        Clear an item's updates.
+      </summary>
+      <param name="itemId">The item’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.UpdateItemGroup(System.Int32,System.String)">
+      <summary>
+        Move an item to a different group.
+      </summary>
+      <param name="itemId">The item’s unique identifier.</param>
+      <param name="groupId">The group’s unique identifier</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.ArchiveItem(System.Int32)">
+      <summary>
+        Archive an item.
+      </summary>
+      <param name="itemId">The item’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.DeleteItem(System.Int32)">
+      <summary>
+        Delete an item.
+      </summary>
+      <param name="itemId">The item’s unique identifier.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateUpdate(Monday.Client.Mutations.CreateUpdate)">
+      <summary>
+        Create a new update.
+      </summary>
+      <param name="createUpdate">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Monday.Client.MondayClient.CreateTag(Monday.Client.Mutations.CreateTag)">
+      <summary>
+        Create a new tag or get it if it already exists.
+      </summary>
+      <param name="createTag">The mutation model.</param>
+      <returns></returns>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateBoard">
+      <summary>
+        Create a new board mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateBoard.Name">
+      <summary>
+        The board's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateBoard.BoardAccessType">
+      <summary>
+        The board's kind. (public / private / share)
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateColumn">
+      <summary>
+        Create a new column in board mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateColumn.BoardId">
+      <summary>
+        The board's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateColumn.Name">
+      <summary>
+        The new column's title.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateColumn.ColumnType">
+      <summary>
+        The type of column to create.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateColumn.Defaults">
+      <summary>
+        The new column's defaults. [JSON]
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateGroup">
+      <summary>
+        Creates a new group in a specific board mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateGroup.BoardId">
+      <summary>
+        The board's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateGroup.Name">
+      <summary>
+        The name of the new group.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateItem">
+      <summary>
+        Create a new item mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateItem.Name">
+      <summary>
+        The new item's name.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateItem.BoardId">
+      <summary>
+        The board's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateItem.GroupId">
+      <summary>
+        The group's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateItem.ColumnValues">
+      <summary>
+        The column values of the new item [JSON].
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateTag">
+      <summary>
+        Create a new tag or get it if it already exists mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateTag.Name">
+      <summary>
+        The new tag's name
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateTag.BoardId">
+      <summary>
+        The private board id to create the tag at (not needed for public boards)
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.CreateUpdate">
+      <summary>
+        Create a new update mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateUpdate.ItemId">
+      <summary>
+        The item's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.CreateUpdate.Body">
+      <summary>
+        The update text.
+      </summary>
+    </member>
+    <member name="T:Monday.Client.Mutations.UpdateColumn">
+      <summary>
+        Change an item's column value mutation.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.UpdateColumn.BoardId">
+      <summary>
+        The board's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.UpdateColumn.ItemId">
+      <summary>
+        The item's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.UpdateColumn.ColumnId">
+      <summary>
+        The column's unique identifier.
+      </summary>
+    </member>
+    <member name="P:Monday.Client.Mutations.UpdateColumn.Value">
+      <summary>
+        The new value of the column. [JSON] [https://monday.com/developers/v2#column-values-section]
+      </summary>
+    </member>
+  </members>
 </doc>

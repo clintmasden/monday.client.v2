@@ -2,6 +2,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Monday.Client.Models;
 using Monday.Client.Mutations;
+using Monday.Client.Responses;
 
 namespace Monday.Client.Tests
 {
@@ -263,6 +264,14 @@ namespace Monday.Client.Tests
                 BoardId = 494930491,
                 Name = "Unit Test Tag"
             }).Result;
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void CustomQueryOrMutation_Pass()
+        {
+            var result = _mondayClient.CustomQueryOrMutation<GetItemsResponse>("{ items(ids: [494930492]) { column_values { id text title type value additional_info }}}").Result;
 
             Assert.IsNotNull(result);
         }

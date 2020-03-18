@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Monday.Client.Responses
 {
-    internal class CreateGroupResponse
+    public class CreateGroupResponse
     {
         [JsonProperty("create_group")] public Group Group { get; set; }
     }
