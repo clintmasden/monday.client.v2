@@ -708,5 +708,27 @@ namespace Monday.Client
 
             return result.Data;
         }
+        
+        /// <summary>
+        ///     Leverage a custom query or mutation using the available responses/models
+        /// </summary>
+        /// <typeparam name="T">Generic object return</typeparam>
+        /// <param name="queryOrMutation">A custom query or mutation</param>
+        /// <param name="variables">anonymous object with variables and values</param>
+        /// <returns></returns>
+        public async Task<T> CustomQueryOrMutation<T>(string queryOrMutation, object variables)
+        {
+            var request = new GraphQLRequest
+            {
+                Query = queryOrMutation,
+                Variables = variables
+            };
+        
+            var result = await _graphQlHttpClient.SendMutationAsync<T>(request);
+            
+            ThrowResponseErrors(result.Errors);
+            
+            return result.Data;
+        }
     }
 }
