@@ -13,7 +13,7 @@
     <PackageProjectUrl>https://github.com/clintmasden/monday.client.v2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/clintmasden/monday.client.v2</RepositoryUrl>
     <PackageId>Monday.Client.v2</PackageId>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <AssemblyVersion>1.0.0.3</AssemblyVersion>
     <FileVersion>1.0.0.3</FileVersion>
   </PropertyGroup>
