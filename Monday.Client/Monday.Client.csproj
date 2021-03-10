@@ -9,11 +9,11 @@
     <Product>Monday Client [API Version 2]</Product>
     <Description>Monday Client Interface [API Version 2]</Description>
     <PackageTags>Monday Client API Monday.com</PackageTags>
-    <PackageReleaseNotes>Added overload for custom query or mutation function.</PackageReleaseNotes>
+    <PackageReleaseNotes>Modified User -&gt; CreatedAt nullable datetime</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/clintmasden/monday.client.v2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/clintmasden/monday.client.v2</RepositoryUrl>
     <PackageId>Monday.Client.v2</PackageId>
-    <Version>1.0.0.3</Version>
+    <Version>1.0.0.4</Version>
     <AssemblyVersion>1.0.0.3</AssemblyVersion>
     <FileVersion>1.0.0.3</FileVersion>
   </PropertyGroup>
