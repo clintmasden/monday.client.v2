@@ -95,6 +95,6 @@ namespace Monday.Client.Models
         ///     The user's creation date.
         /// </summary>
         [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
     }
 }
