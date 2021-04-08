@@ -19,7 +19,7 @@ namespace Monday.App
         {
             var client = new MondayClient("APIKEY");
 
-            var users = client.GetUsers().Result;
+            var users = client.GetUsers().GetAwaiter().GetResult();
 
             users.ForEach(user => Console.WriteLine($"{user.Id}. {user.Name}"));
             Console.Read();
