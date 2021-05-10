@@ -896,6 +896,15 @@
             <param name="queryOrMutation">A custom query or mutation</param>
             <returns></returns>
         </member>
+        <member name="M:Monday.Client.MondayClient.CustomQueryOrMutation``1(System.String,System.Object)">
+            <summary>
+                Leverage a custom query or mutation using the available responses/models
+            </summary>
+            <typeparam name="T">Generic object return</typeparam>
+            <param name="queryOrMutation">A custom query or mutation</param>
+            <param name="variables">Anonymous object with variables and values</param>
+            <returns></returns>
+        </member>
         <member name="T:Monday.Client.Mutations.CreateBoard">
             <summary>
                 Create a new board mutation.

@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using GraphQL;
 using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
 using Monday.Client.Extensions;
 using Monday.Client.Models;
 using Monday.Client.Mutations;
@@ -23,7 +24,7 @@ namespace Monday.Client
         /// <param name="apiKey">The version 2 key.</param>
         public MondayClient(string apiKey)
         {
-            _graphQlHttpClient = new GraphQLHttpClient("https://api.monday.com/v2/");
+            _graphQlHttpClient = new GraphQLHttpClient("https://api.monday.com/v2/", new NewtonsoftJsonSerializer());
             _graphQlHttpClient.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(apiKey);
         }
 
