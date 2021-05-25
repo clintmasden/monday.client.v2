@@ -7,21 +7,24 @@ A .NET Standard/C# implementation of Monday.com API.
 | References | https://github.com/LucyParry/MondayAPIV2_BasicExample |
 
 #### Getting Started:
-```
+```csharp
 using System;
+using System.Threading.Tasks;
 using Monday.Client;
 
 namespace Monday.App
 {
-    public static class Program
+    class Program
     {
-        private static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var client = new MondayClient("APIKEY");
 
-            var users = client.GetUsers().Result;
-
-            users.ForEach(user => Console.WriteLine($"{user.Id}. {user.Name}"));
+            var users = await client.GetUsers();
+            foreach (var user in users)
+            {
+                Console.WriteLine($"{user.Id}. {user.Name}");
+            }
             Console.Read();
         }
     }
