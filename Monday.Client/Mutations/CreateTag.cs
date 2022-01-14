@@ -13,6 +13,6 @@
         /// <summary>
         ///     The private board id to create the tag at (not needed for public boards)
         /// </summary>
-        public int BoardId { get; set; }
+        public long BoardId { get; set; }
     }
 }

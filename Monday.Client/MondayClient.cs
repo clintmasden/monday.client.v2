@@ -137,7 +137,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<Board> GetBoard(int boardId)
+        public async Task<Board> GetBoard(long boardId)
         {
             var request = new GraphQLRequest
             {
@@ -160,7 +160,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<List<Group>> GetGroups(int boardId)
+        public async Task<List<Group>> GetGroups(long boardId)
         {
             var request = new GraphQLRequest
             {
@@ -183,7 +183,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<List<Item>> GetItems(int boardId)
+        public async Task<List<Item>> GetItems(long boardId)
         {
             var request = new GraphQLRequest
             {
@@ -206,7 +206,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="itemId">The item’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<Item> GetItem(int itemId)
+        public async Task<Item> GetItem(long itemId)
         {
             var request = new GraphQLRequest
             {
@@ -229,7 +229,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<List<Tag>> GetTags(int boardId)
+        public async Task<List<Tag>> GetTags(long boardId)
         {
             var request = new GraphQLRequest
             {
@@ -355,7 +355,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="createBoard">The mutation model.</param>
         /// <returns></returns>
-        public async Task<int> CreateBoard(CreateBoard createBoard)
+        public async Task<long> CreateBoard(CreateBoard createBoard)
         {
             var request = new GraphQLRequest
             {
@@ -379,7 +379,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<bool> ArchiveBoard(int boardId)
+        public async Task<bool> ArchiveBoard(long boardId)
         {
             var request = new GraphQLRequest
             {
@@ -478,7 +478,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<bool> ArchiveGroup(int boardId, string groupId)
+        public async Task<bool> ArchiveGroup(long boardId, string groupId)
         {
             var request = new GraphQLRequest
             {
@@ -503,7 +503,7 @@ namespace Monday.Client
         /// <param name="boardId">The board’s unique identifier.</param>
         /// <param name="groupId">THe group's unique identifier</param>
         /// <returns></returns>
-        public async Task<bool> DeleteGroup(int boardId, string groupId)
+        public async Task<bool> DeleteGroup(long boardId, string groupId)
         {
             var request = new GraphQLRequest
             {
@@ -527,7 +527,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="createItem">The mutation model.</param>
         /// <returns></returns>
-        public async Task<int> CreateItem(CreateItem createItem)
+        public async Task<long> CreateItem(CreateItem createItem)
         {
             var request = new GraphQLRequest
             {
@@ -553,7 +553,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="itemId">The item’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<bool> ClearItemUpdates(int itemId)
+        public async Task<bool> ClearItemUpdates(long itemId)
         {
             var request = new GraphQLRequest
             {
@@ -577,7 +577,7 @@ namespace Monday.Client
         /// <param name="itemId">The item’s unique identifier.</param>
         /// <param name="groupId">The group’s unique identifier</param>
         /// <returns></returns>
-        public async Task<bool> UpdateItemGroup(int itemId, string groupId)
+        public async Task<bool> UpdateItemGroup(long itemId, string groupId)
         {
             var request = new GraphQLRequest
             {
@@ -601,7 +601,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="itemId">The item’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<bool> ArchiveItem(int itemId)
+        public async Task<bool> ArchiveItem(long itemId)
         {
             var request = new GraphQLRequest
             {
@@ -624,7 +624,7 @@ namespace Monday.Client
         /// </summary>
         /// <param name="itemId">The item’s unique identifier.</param>
         /// <returns></returns>
-        public async Task<bool> DeleteItem(int itemId)
+        public async Task<bool> DeleteItem(long itemId)
         {
             var request = new GraphQLRequest
             {

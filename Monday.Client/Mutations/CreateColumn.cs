@@ -10,7 +10,7 @@ namespace Monday.Client.Mutations
         /// <summary>
         ///     The board's unique identifier.
         /// </summary>
-        public int BoardId { get; set; }
+        public long BoardId { get; set; }
 
         /// <summary>
         ///     The new column's title.

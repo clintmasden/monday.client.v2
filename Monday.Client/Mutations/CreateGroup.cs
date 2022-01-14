@@ -8,7 +8,7 @@
         /// <summary>
         ///     The board's unique identifier.
         /// </summary>
-        public int BoardId { get; set; }
+        public long BoardId { get; set; }
 
         /// <summary>
         ///     The name of the new group.

@@ -15,7 +15,7 @@ namespace Monday.Client.Models
         ///     The update's item unique identifier.
         /// </summary>
         [JsonProperty("item_id")]
-        public int ItemId { get; set; }
+        public long ItemId { get; set; }
 
         /// <summary>
         ///     The unique identifier of the update creator.
