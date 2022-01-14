@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Monday.Client.Models;
@@ -14,7 +15,7 @@ namespace Monday.Client.Tests
         [ClassInitialize]
         public static void SetupClient(TestContext con)
         {
-            var key = File.ReadAllText(@"C:\Users\user\Desktop\thekey.txt");
+            var key = File.ReadAllText(@"../../../../.key");
             _mondayClient = new MondayClient(key);
         }
 
