@@ -19,11 +19,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\.Bucket\.github.source\monday.client.v2\Monday.Client\Monday.Client.xml</DocumentationFile>
+    <DocumentationFile>Monday.Client.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\.Bucket\github.source\monday.v2\Monday.Client\Monday.Client.xml</DocumentationFile>
+    <DocumentationFile>Monday.Client.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
