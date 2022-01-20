@@ -9,13 +9,13 @@
     <Product>Monday Client [API Version 2]</Product>
     <Description>Monday Client Interface [API Version 2]</Description>
     <PackageTags>Monday Client API Monday.com</PackageTags>
-    <PackageReleaseNotes>Updated dependencies</PackageReleaseNotes>
+    <PackageReleaseNotes>Merged in porterchris's pull request (board Id -&gt; Int -&gt; Long) that corrects Mondays Big Int's changes... </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/clintmasden/monday.client.v2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/clintmasden/monday.client.v2</RepositoryUrl>
     <PackageId>Monday.Client.v2</PackageId>
-    <Version>1.0.0.5</Version>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
+    <Version>1.0.0.6</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
