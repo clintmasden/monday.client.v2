@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>mit-license.txt</PackageLicenseFile>
     <Authors>Clint Masden</Authors>
@@ -31,6 +31,21 @@
     <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="3.2.3" />
   </ItemGroup>
 
+  <!-- .NET 4.7.2 only includes -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <!-- In case we need #define for .Net Standard -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+
+  <!-- In case we need #define for .Net Framework -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+    <DefineConstants>NET472;NETFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+    
   <ItemGroup>
     <None Include="..\mit-license.txt">
       <Pack>True</Pack>
