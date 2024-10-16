@@ -17,7 +17,7 @@ namespace Monday.Client.Models
         /// <summary>
         ///     The unique identifier of the board.
         /// </summary>
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         ///     The board's name.

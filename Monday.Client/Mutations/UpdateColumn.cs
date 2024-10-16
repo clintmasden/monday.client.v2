@@ -8,12 +8,12 @@
         /// <summary>
         ///     The board's unique identifier.
         /// </summary>
-        public long BoardId { get; set; }
+        public string BoardId { get; set; }
 
         /// <summary>
         ///     The item's unique identifier.
         /// </summary>
-        public long ItemId { get; set; }
+        public string ItemId { get; set; }
 
         /// <summary>
         ///     The column's unique identifier.

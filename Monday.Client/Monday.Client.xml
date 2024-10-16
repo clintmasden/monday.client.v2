@@ -295,11 +295,6 @@
                 The column's unique identifier.
             </summary>
         </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Name">
-            <summary>
-                The column's title.
-            </summary>
-        </member>
         <member name="P:Monday.Client.Models.ColumnValue.Value">
             <summary>
                 The column's value in json format.
@@ -308,11 +303,6 @@
         <member name="P:Monday.Client.Models.ColumnValue.ValueText">
             <summary>
                 The column's textual value in string form.
-            </summary>
-        </member>
-        <member name="P:Monday.Client.Models.ColumnValue.Information">
-            <summary>
-                The column value's additional information. [JSON]
             </summary>
         </member>
         <member name="T:Monday.Client.Models.Complexity">
@@ -705,7 +695,7 @@
             <param name="userAccessType">The user access type.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetUser(System.Int32)">
+        <member name="M:Monday.Client.MondayClient.GetUser(System.String)">
             <summary>
                 Return a specific user.
             </summary>
@@ -721,42 +711,42 @@
             </remarks>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetBoard(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.GetBoard(System.String)">
             <summary>
                 Return a specific board with it's columns.
             </summary>
             <param name="boardId">The board’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetGroups(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.GetGroups(System.String)">
             <summary>
                 Gets all groups on a board.
             </summary>
             <param name="boardId">The board’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetItems(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.GetItems(System.String)">
             <summary>
                 Get all (up to 100,000) items [excluding columns and subscribers] with simplified boards, groups, and users.
             </summary>
             <param name="boardId">The board’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetItem(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.GetItem(System.String)">
             <summary>
                 Return a specific item with it's board, group, columns, subscribers, updates, replies and user.
             </summary>
             <param name="itemId">The item’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetTags(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.GetTags(System.String)">
             <summary>
                 Gets all tags on a board.
             </summary>
             <param name="boardId">The board’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetTag(System.Int32)">
+        <member name="M:Monday.Client.MondayClient.GetTag(System.String)">
             <summary>
                 Returns a specific tag.
             </summary>
@@ -769,7 +759,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.GetTeam(System.Int32)">
+        <member name="M:Monday.Client.MondayClient.GetTeam(System.String)">
             <summary>
                 Returns a specific team with simplified users.
             </summary>
@@ -795,7 +785,7 @@
             <param name="createBoard">The mutation model.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveBoard(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.ArchiveBoard(System.String)">
             <summary>
                 Archives a board.
             </summary>
@@ -823,14 +813,15 @@
             <param name="createGroup">The mutation model.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveGroup(System.Int64,System.String)">
+        <member name="M:Monday.Client.MondayClient.ArchiveGroup(System.String,System.String)">
             <summary>
                 Archives a group in a specific board.
             </summary>
             <param name="boardId">The board’s unique identifier.</param>
+            <param name="groupId">The group’s unique identifier</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.DeleteGroup(System.Int64,System.String)">
+        <member name="M:Monday.Client.MondayClient.DeleteGroup(System.String,System.String)">
             <summary>
                 Deletes a group in a specific board.
             </summary>
@@ -845,14 +836,14 @@
             <param name="createItem">The mutation model.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.ClearItemUpdates(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.ClearItemUpdates(System.String)">
             <summary>
                 Clear an item's updates.
             </summary>
             <param name="itemId">The item’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.UpdateItemGroup(System.Int64,System.String)">
+        <member name="M:Monday.Client.MondayClient.UpdateItemGroup(System.String,System.String)">
             <summary>
                 Move an item to a different group.
             </summary>
@@ -860,14 +851,14 @@
             <param name="groupId">The group’s unique identifier</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.ArchiveItem(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.ArchiveItem(System.String)">
             <summary>
                 Archive an item.
             </summary>
             <param name="itemId">The item’s unique identifier.</param>
             <returns></returns>
         </member>
-        <member name="M:Monday.Client.MondayClient.DeleteItem(System.Int64)">
+        <member name="M:Monday.Client.MondayClient.DeleteItem(System.String)">
             <summary>
                 Delete an item.
             </summary>

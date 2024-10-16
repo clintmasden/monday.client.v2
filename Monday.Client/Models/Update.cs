@@ -9,7 +9,7 @@ namespace Monday.Client.Models
         /// <summary>
         ///     The update's unique identifier.
         /// </summary>
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         ///     The update's item unique identifier.

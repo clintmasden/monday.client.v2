@@ -13,7 +13,7 @@
         /// <summary>
         ///     The board's unique identifier.
         /// </summary>
-        public long BoardId { get; set; }
+        public string BoardId { get; set; }
 
         /// <summary>
         ///     The group's unique identifier.
