@@ -8,7 +8,7 @@
         /// <summary>
         ///     The item's unique identifier.
         /// </summary>
-        public long ItemId { get; set; }
+        public string ItemId { get; set; }
 
         /// <summary>
         ///     The update text.

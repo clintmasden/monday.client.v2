@@ -13,12 +13,6 @@ namespace Monday.Client.Models
         public string Id { get; set; }
 
         /// <summary>
-        ///     The column's title.
-        /// </summary>
-        [JsonProperty("title")]
-        public string Name { get; set; }
-
-        /// <summary>
         ///     The column's value in json format.
         /// </summary>
         [JsonProperty("value")]
@@ -30,10 +24,5 @@ namespace Monday.Client.Models
         [JsonProperty("text")]
         public string ValueText { get; set; }
 
-        /// <summary>
-        ///     The column value's additional information. [JSON]
-        /// </summary>
-        [JsonProperty("additional_info")]
-        public string Information { get; set; }
     }
 }
